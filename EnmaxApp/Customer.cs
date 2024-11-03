@@ -5,6 +5,8 @@
     {
         // Properties
         private static int accountNumberCounter = 0;
+        private static int totalCustomers = 0;
+        private static decimal averageBill = 0m;
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
@@ -22,6 +24,9 @@
             LastName = lastName;
             Kwh = kwhUsed;
             BillAmount = UpdateBillAmount();
+
+            totalCustomers++;
+            averageBill += BillAmount;
         }
 
         // Method to calculate the Kwh charge
@@ -37,15 +42,26 @@
             return BillAmount = (decimal)CalculateCharge();
         }
 
-        private int GenerateAccountNumber()
+        private static int GenerateAccountNumber()
         {
             return ++accountNumberCounter;
+        }
+
+        public static int GetTotalCustomers()
+        {
+            return totalCustomers; // Return the total number of customers
+        }
+
+        public static decimal GenerageAverageBill()
+        {
+
+            return (averageBill / totalCustomers);
         }
 
         //Override to display Cx information
         public override string ToString()
         {
-            return $"{FirstName} {LastName} | kWh Used: {Kwh} | BillAmount: {BillAmount} | Account: {AccountNo}";
+            return $"{FirstName} {LastName} | kWh Used: {Kwh} | Account: {AccountNo}";
         }
 
 

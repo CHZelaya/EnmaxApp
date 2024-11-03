@@ -211,21 +211,21 @@ namespace EnmaxApp
             // 
             TextBox_TotalCustomers.Location = new Point(479, 542);
             TextBox_TotalCustomers.Name = "TextBox_TotalCustomers";
-            TextBox_TotalCustomers.Size = new Size(43, 27);
+            TextBox_TotalCustomers.Size = new Size(80, 27);
             TextBox_TotalCustomers.TabIndex = 17;
             // 
             // TextBox_Totalkwh
             // 
             TextBox_Totalkwh.Location = new Point(664, 542);
             TextBox_Totalkwh.Name = "TextBox_Totalkwh";
-            TextBox_Totalkwh.Size = new Size(46, 27);
+            TextBox_Totalkwh.Size = new Size(79, 27);
             TextBox_Totalkwh.TabIndex = 18;
             // 
             // TextBox_AverageBill
             // 
             TextBox_AverageBill.Location = new Point(846, 542);
             TextBox_AverageBill.Name = "TextBox_AverageBill";
-            TextBox_AverageBill.Size = new Size(44, 27);
+            TextBox_AverageBill.Size = new Size(80, 27);
             TextBox_AverageBill.TabIndex = 19;
             // 
             // label9

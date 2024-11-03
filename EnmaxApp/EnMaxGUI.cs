@@ -3,7 +3,7 @@ namespace EnmaxApp
 
     public partial class EnMaxGUI : Form
     {
-        const int TOTAL_CUSTOMERS = 0;
+        int TOTAL_CUSTOMERS = 0;
         double TOTAL_KWH = 0;
         const decimal AVERAGE_BILL = 0m;
 
@@ -39,10 +39,6 @@ namespace EnmaxApp
         /// <param name="e"></param>
         private void Button_AddCustomer_Click(object sender, EventArgs e)
         {
-            // Parse TextBox_AccountNo.Text into an Int.
-            //string TextBox_AccountNo_Text = TextBox_AccountNo.Text;
-            //int parsedAccountNumber;
-            //int.TryParse(TextBox_AccountNo_Text, out parsedAccountNumber);
 
             // Parse TextBox_kwh.Text to a double
             string TextBox_kwhUsed_Text = TextBox_Kwh.Text;
@@ -59,9 +55,14 @@ namespace EnmaxApp
                 );
 
             TOTAL_KWH += parsedkwhUsed;
+            //Display Total kWh used
+            DisplayTotalKwh();
+            UpdateCustomerTotalDislay();
+            UpdateAverageBillDisplay();
 
 
             newCustomer.UpdateBillAmount();
+            Customer.GetTotalCustomers();
 
             MessageBox.Show("Customer Added!");
 
@@ -82,8 +83,8 @@ namespace EnmaxApp
             // Call UpdateListBox
             UpdateListBox();
 
-            //Display Total kWh used
-            DisplayTotalKwh();
+
+
         }
 
         /// <summary>
@@ -110,6 +111,16 @@ namespace EnmaxApp
         {
             TextBox_Totalkwh.Text = ($"{TOTAL_KWH}");
 
+        }
+
+        private void UpdateCustomerTotalDislay()
+        {
+            TextBox_TotalCustomers.Text = Customer.GetTotalCustomers().ToString();
+        }
+
+        private void UpdateAverageBillDisplay()
+        {
+            TextBox_AverageBill.Text = Customer.GenerageAverageBill().ToString("c");
         }
     }
 }
