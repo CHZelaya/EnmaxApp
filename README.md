@@ -5,7 +5,7 @@
 - ✅  Implement properties for customer data
 - ❌  Add **deciaml BillAmount**
 - ✅  Write constructors for the `Customer` class
-- ❌  Implement `CalculateCharge` method
+- ✅  Implement `CalculateCharge` method
 - ✅  Override `ToString()` method for displaying customer info
 - ✅  Develop Windows Forms GUI for data entry and display
 - ❌  Ensure input validation for customer data
