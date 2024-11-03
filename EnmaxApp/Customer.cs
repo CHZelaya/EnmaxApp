@@ -3,77 +3,49 @@
     //Declare private variables
     internal class Customer
     {
-        private string firstName;
-        private string lastName;
-        private int accountNo;
-        private double kwhused;
-        private decimal billamount;
+        // Properties
+        private static int accountNumberCounter = 0;
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
 
+        // Corrected AccountNo property
+        public int AccountNo { get; private set; }
 
+        public double Kwh { get; set; }
+        public decimal BillAmount { get; set; }
 
-
-        //Constructor
-
-        public Customer(string firstName, string lastName, int accountNo, double kwhUsed, decimal billamount)
+        // Constructor
+        public Customer(string firstName, string lastName, double kwhUsed, decimal billamount)
         {
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.accountNo = accountNo;
-            this.kwhused = kwhUsed;
-            this.billamount = billamount;
-
-        }
-
-
-        //Getters and Setters
-        public string FirstName
-        {
-            get { return firstName; }
-            set { firstName = value; }
-        }
-
-        public string LastName
-        {
-            get { return lastName; }
-            set { lastName = value; }
-        }
-
-        public int AccountNo
-        {
-            get { return accountNo; }
-            set { accountNo = value; }
-
-        }
-
-        public double Kwh
-        {
-            get { return kwhused; }
-            set { kwhused = value; }
-        }
-
-        public decimal BillAmount
-        {
-            get { return billamount; }
-            set { billamount = value; }
+            AccountNo = GenerateAccountNumber(); // Calling Method to generate an account number.
+            FirstName = firstName;
+            LastName = lastName;
+            Kwh = kwhUsed;
+            BillAmount = UpdateBillAmount();
         }
 
         // Method to calculate the Kwh charge
         public double CalculateCharge()
         {
-            return (kwhused * 0.07) + 12;
+            return (Kwh * 0.07) + 12;
         }
 
         // Method to update BillAmount
 
-        public void UpdateBillAmount()
+        public decimal UpdateBillAmount()
         {
-            BillAmount = (decimal)CalculateCharge();
+            return BillAmount = (decimal)CalculateCharge();
+        }
+
+        private int GenerateAccountNumber()
+        {
+            return ++accountNumberCounter;
         }
 
         //Override to display Cx information
         public override string ToString()
         {
-            return $"{FirstName} {lastName} | kWh Used: {kwhused} | BillAmount: {billamount} | Account: {accountNo}";
+            return $"{FirstName} {LastName} | kWh Used: {Kwh} | BillAmount: {BillAmount} | Account: {AccountNo}";
         }
 
 
