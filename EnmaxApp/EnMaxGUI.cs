@@ -85,11 +85,20 @@ namespace EnmaxApp
             {
                 // Get the Selected Customer kWh
                 Customer selectedCustomer = (Customer)ListBox_DisplayInfo.SelectedItem;
-
-                double totalCost = selectedCustomer.Kwh * 0.07 + 12;
+                double totalCost = CalculateTotalCost(selectedCustomer);
 
                 TextBox_TotalDue.Text = $"{totalCost:c}";
             }
+        }
+
+        /// <summary>
+        /// Calculate total cost of Customers bill
+        /// </summary>
+        /// <param name="selectedCustomer"></param>
+        /// <returns>Total cost: Total of kwH used * 0.07 + 12 Administration fee</returns>
+        private static double CalculateTotalCost(Customer selectedCustomer)
+        {
+            return (selectedCustomer.Kwh * 0.07) + 12;
         }
     }
 }
