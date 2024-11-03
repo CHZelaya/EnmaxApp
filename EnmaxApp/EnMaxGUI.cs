@@ -27,8 +27,6 @@ namespace EnmaxApp
         }
 
 
-
-
         /// <summary>
         /// Event Handler linked to the button, main function is to add a new Customer.
         /// </summary>
@@ -47,14 +45,15 @@ namespace EnmaxApp
             double.TryParse(TextBox_kwhUsed_Text, out parsedkwhUsed);
 
 
-
             Customer newCustomer = new Customer
                 (
                 TextBox_FName.Text,
                 TextBox_LName.Text,
                 parsedAccountNumber,
-                parsedkwhUsed
+                parsedkwhUsed,
+                0
                 );
+            newCustomer.UpdateBillAmount();
 
             MessageBox.Show("Customer Added!");
 
@@ -65,6 +64,9 @@ namespace EnmaxApp
 
             // Add the new customer to your list 
             customers.Add(newCustomer);
+
+            //NOTE TO SELF:
+            //Create variables CustomerAdded & KWHUsed and simply accumulate customers and add KWH per Customer.
         }
 
 
@@ -85,20 +87,10 @@ namespace EnmaxApp
             {
                 // Get the Selected Customer kWh
                 Customer selectedCustomer = (Customer)ListBox_DisplayInfo.SelectedItem;
-                double totalCost = CalculateCharge(selectedCustomer);
 
-                TextBox_TotalDue.Text = $"{totalCost:c}";
+                // Grab the bill amount and display it in the appropriate Text box.
+                TextBox_TotalDue.Text = $"{selectedCustomer.BillAmount:c}";
             }
-        }
-
-        /// <summary>
-        /// Calculate total cost of Customers bill
-        /// </summary>
-        /// <param name="selectedCustomer"></param>
-        /// <returns>Total cost: Total of kwH used * 0.07 + 12 Administration fee</returns>
-        private static double CalculateCharge(Customer selectedCustomer)
-        {
-            return (selectedCustomer.Kwh * 0.07) + 12;
         }
     }
 }

@@ -7,18 +7,20 @@
         private string lastName;
         private int accountNo;
         private double kwhused;
+        private decimal billamount;
 
 
 
 
         //Constructor
 
-        public Customer(string firstName, string lastName, int accountNo, double kwhUsed)
+        public Customer(string firstName, string lastName, int accountNo, double kwhUsed, decimal billamount)
         {
             this.firstName = firstName;
             this.lastName = lastName;
             this.accountNo = accountNo;
             this.kwhused = kwhUsed;
+            this.billamount = billamount;
 
         }
 
@@ -49,16 +51,29 @@
             set { kwhused = value; }
         }
 
+        public decimal BillAmount
+        {
+            get { return billamount; }
+            set { billamount = value; }
+        }
+
         // Method to calculate the Kwh charge
         public double CalculateCharge()
         {
-            return kwhused * 0.07;
+            return (kwhused * 0.07) + 12;
+        }
+
+        // Method to update BillAmount
+
+        public void UpdateBillAmount()
+        {
+            BillAmount = (decimal)CalculateCharge();
         }
 
         //Override to display Cx information
         public override string ToString()
         {
-            return $"{FirstName} {lastName} / kWh Used: {kwhused} - Account: {accountNo}";
+            return $"{FirstName} {lastName} | kWh Used: {kwhused} | BillAmount: {billamount} | Account: {accountNo}";
         }
 
 
