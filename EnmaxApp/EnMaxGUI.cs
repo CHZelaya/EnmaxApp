@@ -85,7 +85,7 @@ namespace EnmaxApp
             {
                 // Get the Selected Customer kWh
                 Customer selectedCustomer = (Customer)ListBox_DisplayInfo.SelectedItem;
-                double totalCost = CalculateTotalCost(selectedCustomer);
+                double totalCost = CalculateCharge(selectedCustomer);
 
                 TextBox_TotalDue.Text = $"{totalCost:c}";
             }
@@ -96,7 +96,7 @@ namespace EnmaxApp
         /// </summary>
         /// <param name="selectedCustomer"></param>
         /// <returns>Total cost: Total of kwH used * 0.07 + 12 Administration fee</returns>
-        private static double CalculateTotalCost(Customer selectedCustomer)
+        private static double CalculateCharge(Customer selectedCustomer)
         {
             return (selectedCustomer.Kwh * 0.07) + 12;
         }
