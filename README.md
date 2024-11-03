@@ -1,20 +1,20 @@
 # CPRG 200 Lab Assignment 2
 
 ## To-Do List
-- [x] Create `Customer` class in the Class Library
-- [x] Implement properties for customer data
-- [ ] Add **deciaml BillAmount**
-- [x] Write constructors for the `Customer` class
-- [ ] Implement `CalculateCharge` method
-- [x] Override `ToString()` method for displaying customer info
-- [x] Develop Windows Forms GUI for data entry and display
-- [ ] Ensure input validation for customer data
-- [ ] Implement unique AccountNo handling
-- [x] Display customer data in a list box
-- [ ] Track statistics: number of customers, total kWh, average bill
-- [ ] Create Unit Test Project
-- [ ] Write unit tests for `CalculateCharge` method
-- [ ] Ensure all unit tests pass
+- ✅  Create `Customer` class in the Class Library
+- ✅  Implement properties for customer data
+- ❌  Add **deciaml BillAmount**
+- ✅  Write constructors for the `Customer` class
+- ❌  Implement `CalculateCharge` method
+- ✅  Override `ToString()` method for displaying customer info
+- ✅  Develop Windows Forms GUI for data entry and display
+- ❌  Ensure input validation for customer data
+- ❌  Implement unique AccountNo handling
+- ✅  Display customer data in a list box
+- ❌  Track statistics: number of customers, total kWh, average bill
+- ❌  Create Unit Test Project
+- ❌  Write unit tests for `CalculateCharge` method
+- ❌  Ensure all unit tests pass
 
 ## Overview
 This lab assignment focuses on creating an application that processes electricity bills for multiple customers. The application will store customer data, calculate electricity bills based on usage, and track various statistics related to the customers.
