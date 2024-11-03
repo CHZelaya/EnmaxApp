@@ -11,7 +11,7 @@
 - ❌  Ensure input validation for customer data
 - ✅  Implement unique AccountNo handling
 - ✅  Display customer data in a list box
-- ❌  Track statistics: number of customers, total kWh, average bill
+- ✅  Track statistics: number of customers, total kWh, average bill
 - ❌  Create Unit Test Project
 - ❌  Write unit tests for `CalculateCharge` method
 - ❌  Ensure all unit tests pass
