@@ -73,5 +73,30 @@ The solution will consist of three projects:
   - Variable comments explaining their meaning.
   - Comments for groups of statements performing a single task.
 
+# Project Evaluation Rubric
+
+This document outlines the marking criteria for the application project, which consists of three components: WindowsForms, ClassLibrary, and UnitTest. Each component is evaluated based on specific criteria, with a total possible score of 30 points.
+
+## Marking Components
+
+| Component Description                                                                 | Points |
+|--------------------------------------------------------------------------------------|--------|
+| **Application has 3 projects:** WindowsForms, ClassLibrary, and UnitTest            | 3      |
+| **The GUI screen has all necessary controls, looks neat, and is easy to use**      | 2      |
+| **Application maintains an array or list to store Customer objects**                | 2      |
+| **All customers' data, including calculated charge, is displayed in a list box**   | 2      |
+| **Application accepts data for new customer to add and runs CalculateCharge method**| 2      |
+| **All inputs are validated to be provided, and kWh to be a non-negative number**   | 2      |
+| **Three required statistics are calculated and displayed**                          | 3      |
+| **ClassLibrary project has class Customer with all required members**               | 5      |
+| **UnitTest project contains a class that tests CalculateCharge in Customer class, tests are correct, and all tests pass** | 6      |
+| **Code is clear, uses good naming practices, and has comments as required**         | 3      |
+
+## Total Points: 30
+
+### Notes
+- Ensure that each component meets the specified criteria to achieve the maximum score.
+- Pay attention to the clarity and usability of the GUI, as well as the correctness of the underlying logic and tests.
+
 ## Conclusion
 This lab assignment provides an opportunity to practice object-oriented programming concepts, including class creation, object management, and unit testing. By completing this assignment, you will gain valuable experience in developing applications that manage and process data effectively.
