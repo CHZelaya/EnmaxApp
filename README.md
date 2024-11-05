@@ -3,12 +3,12 @@
 ## To-Do List
 - ✅  Create `Customer` class in the Class Library
 - ✅  Implement properties for customer data
-- ✅  Add **deciaml BillAmount**
+- ✅  Add **decimal BillAmount**
 - ✅  Write constructors for the `Customer` class
 - ✅  Implement `CalculateCharge` method
 - ✅  Override `ToString()` method for displaying customer info
 - ✅  Develop Windows Forms GUI for data entry and display
-- ❌  Ensure input validation for customer data
+- ✅  Ensure input validation for customer data
 - ✅  Implement unique AccountNo handling
 - ✅  Display customer data in a list box
 - ✅  Track statistics: number of customers, total kWh, average bill
