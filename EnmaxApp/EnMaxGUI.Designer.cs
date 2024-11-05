@@ -91,6 +91,7 @@ namespace EnmaxApp
             TextBox_FName.Name = "TextBox_FName";
             TextBox_FName.Size = new Size(168, 27);
             TextBox_FName.TabIndex = 3;
+            TextBox_FName.Tag = "First Name";
             // 
             // TextBox_LName
             // 
@@ -98,6 +99,7 @@ namespace EnmaxApp
             TextBox_LName.Name = "TextBox_LName";
             TextBox_LName.Size = new Size(176, 27);
             TextBox_LName.TabIndex = 4;
+            TextBox_LName.Tag = "Last Name";
             // 
             // TextBox_Kwh
             // 
@@ -105,6 +107,7 @@ namespace EnmaxApp
             TextBox_Kwh.Name = "TextBox_Kwh";
             TextBox_Kwh.Size = new Size(168, 27);
             TextBox_Kwh.TabIndex = 5;
+            TextBox_Kwh.Tag = "kWh Used";
             // 
             // TextBox_AccountNo
             // 
@@ -211,6 +214,7 @@ namespace EnmaxApp
             // 
             TextBox_TotalCustomers.Location = new Point(479, 542);
             TextBox_TotalCustomers.Name = "TextBox_TotalCustomers";
+            TextBox_TotalCustomers.ReadOnly = true;
             TextBox_TotalCustomers.Size = new Size(80, 27);
             TextBox_TotalCustomers.TabIndex = 17;
             // 
@@ -218,6 +222,7 @@ namespace EnmaxApp
             // 
             TextBox_Totalkwh.Location = new Point(664, 542);
             TextBox_Totalkwh.Name = "TextBox_Totalkwh";
+            TextBox_Totalkwh.ReadOnly = true;
             TextBox_Totalkwh.Size = new Size(79, 27);
             TextBox_Totalkwh.TabIndex = 18;
             // 
@@ -225,6 +230,7 @@ namespace EnmaxApp
             // 
             TextBox_AverageBill.Location = new Point(846, 542);
             TextBox_AverageBill.Name = "TextBox_AverageBill";
+            TextBox_AverageBill.ReadOnly = true;
             TextBox_AverageBill.Size = new Size(80, 27);
             TextBox_AverageBill.TabIndex = 19;
             // 

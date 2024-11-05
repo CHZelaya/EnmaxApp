@@ -39,42 +39,64 @@ namespace EnmaxApp
         /// <param name="e"></param>
         private void Button_AddCustomer_Click(object sender, EventArgs e)
         {
+            //Validation and error handling
+            if (!ValidatorUtils.IsPresent(TextBox_FName) ||
+                !ValidatorUtils.IsPresent(TextBox_LName) ||
+                !ValidatorUtils.IsNonNegative(TextBox_Kwh) ||
+                !ValidatorUtils.IsAlphabetic(TextBox_FName) ||
+                !ValidatorUtils.IsAlphabetic(TextBox_LName)
+
+                )
+            {
+                //If any validation fails, exit the method
+                return;
+            }
+
+            // Parse kWh input after validation
 
             // Parse TextBox_kwh.Text to a double
             string TextBox_kwhUsed_Text = TextBox_Kwh.Text;
             double parsedkwhUsed;
-            double.TryParse(TextBox_kwhUsed_Text, out parsedkwhUsed);
+            if (!double.TryParse(TextBox_kwhUsed_Text, out parsedkwhUsed))
+            {
+                MessageBox.Show("Please enter a valid, non negative number for kWh used.");
+                return;
+            }
+            try
+            {
+                Customer newCustomer = new Customer
+                    (
+                        TextBox_FName.Text,
+                        TextBox_LName.Text,
+                        parsedkwhUsed,
+                        0
+                    );
+
+                TOTAL_KWH += parsedkwhUsed;
+                //Display Total kWh used
+                DisplayTotalKwh();
+                UpdateCustomerTotalDislay();
+                UpdateAverageBillDisplay();
 
 
-            Customer newCustomer = new Customer
-                (
-                TextBox_FName.Text,
-                TextBox_LName.Text,
-                parsedkwhUsed,
-                0
-                );
+                newCustomer.UpdateBillAmount();
+                Customer.GetTotalCustomers();
 
-            TOTAL_KWH += parsedkwhUsed;
-            //Display Total kWh used
-            DisplayTotalKwh();
-            UpdateCustomerTotalDislay();
-            UpdateAverageBillDisplay();
+                MessageBox.Show("Customer Added!");
+
+                TextBox_FName.Clear();
+                TextBox_LName.Clear();
+                TextBox_Kwh.Clear();
+
+                // Add the new customer to your list 
+                customers.Add(newCustomer);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while adding the customer: {ex.Message}");
+            }
 
 
-            newCustomer.UpdateBillAmount();
-            Customer.GetTotalCustomers();
-
-            MessageBox.Show("Customer Added!");
-
-            TextBox_FName.Clear();
-            TextBox_LName.Clear();
-            TextBox_Kwh.Clear();
-
-            // Add the new customer to your list 
-            customers.Add(newCustomer);
-
-            //NOTE TO SELF:
-            //Create variables CustomerAdded & KWHUsed and simply accumulate customers and add KWH per Customer.
         }
 
 
@@ -113,11 +135,17 @@ namespace EnmaxApp
 
         }
 
+        /// <summary>
+        /// Update the TextBox display on the GUI with the Total number of Customers
+        /// </summary>
         private void UpdateCustomerTotalDislay()
         {
             TextBox_TotalCustomers.Text = Customer.GetTotalCustomers().ToString();
         }
 
+        /// <summary>
+        /// Update the TextBox display on the GUI with the Average bill.
+        /// </summary>
         private void UpdateAverageBillDisplay()
         {
             TextBox_AverageBill.Text = Customer.GenerageAverageBill().ToString("c");

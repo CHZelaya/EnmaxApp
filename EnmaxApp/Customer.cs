@@ -1,6 +1,5 @@
 ﻿namespace EnmaxApp
 {
-    //Declare private variables
     internal class Customer
     {
         // Properties
@@ -42,16 +41,19 @@
             return BillAmount = (decimal)CalculateCharge();
         }
 
+        //Method to Generate an Account Number
         private static int GenerateAccountNumber()
         {
             return ++accountNumberCounter;
         }
 
+        // Method to get the total number of customers
         public static int GetTotalCustomers()
         {
             return totalCustomers; // Return the total number of customers
         }
 
+        // Method to generate the average bill.
         public static decimal GenerageAverageBill()
         {
 
