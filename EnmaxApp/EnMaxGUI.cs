@@ -1,3 +1,9 @@
+// ************************************************************************************
+// SAIT Class: Fall 2024 RAD for OOSD (CRPG-200-A)
+// Author: Carlos Hernandez-Zelaya
+// Project Title: CPRG 200 Lab Assignment 2
+// ************************************************************************************
+
 namespace EnmaxApp
 {
 
@@ -48,7 +54,7 @@ namespace EnmaxApp
 
                 )
             {
-                //If any validation fails, exit the method
+                //If any validation fails, exit the method, empty return as ValidatorUtils is handling the ShowMessage
                 return;
             }
 
@@ -148,7 +154,7 @@ namespace EnmaxApp
         /// </summary>
         private void UpdateAverageBillDisplay()
         {
-            TextBox_AverageBill.Text = Customer.GenerageAverageBill().ToString("c");
+            TextBox_AverageBill.Text = Customer.GetAverageBill().ToString("c");
         }
     }
 }

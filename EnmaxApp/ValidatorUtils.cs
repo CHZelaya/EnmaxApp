@@ -1,4 +1,9 @@
-﻿namespace EnmaxApp
+﻿// ************************************************************************************
+// SAIT Class: Fall 2024 RAD for OOSD (CRPG-200-A)
+// Author: Carlos Hernandez-Zelaya
+// Project Title: CPRG 200 Lab Assignment 2
+// ************************************************************************************
+namespace EnmaxApp
 {
     static public class ValidatorUtils
     {

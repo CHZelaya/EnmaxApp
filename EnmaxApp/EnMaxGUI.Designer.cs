@@ -61,7 +61,7 @@ namespace EnmaxApp
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(-11, -10);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(373, 642);
+            pictureBox1.Size = new Size(373, 596);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -69,10 +69,11 @@ namespace EnmaxApp
             // label1
             // 
             label1.AutoSize = true;
+            label1.BorderStyle = BorderStyle.Fixed3D;
             label1.Font = new Font("Microsoft YaHei", 28.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.Location = new Point(455, 28);
             label1.Name = "label1";
-            label1.Size = new Size(435, 60);
+            label1.Size = new Size(437, 62);
             label1.TabIndex = 1;
             label1.Text = "Enmax Dashboard";
             // 
@@ -266,7 +267,7 @@ namespace EnmaxApp
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SlateGray;
-            ClientSize = new Size(974, 578);
+            ClientSize = new Size(986, 588);
             Controls.Add(label11);
             Controls.Add(label10);
             Controls.Add(label9);
