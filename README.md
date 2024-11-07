@@ -2,6 +2,7 @@
 
 ## To-Do List
 - ✅  Create `Customer` class in the Class Library
+   - Customer needs to be in its own project
 - ✅  Implement properties for customer data
 - ✅  Add **decimal BillAmount**
 - ✅  Write constructors for the `Customer` class
