@@ -3,7 +3,7 @@
 // Author: Carlos Hernandez-Zelaya
 // Project Title: CPRG 200 Lab Assignment 2
 // ************************************************************************************
-
+using CustomerClass;
 namespace EnmaxApp
 {
 
