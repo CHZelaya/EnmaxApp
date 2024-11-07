@@ -12,9 +12,9 @@
 - ✅  Implement unique AccountNo handling
 - ✅  Display customer data in a list box
 - ✅  Track statistics: number of customers, total kWh, average bill
-- ❌  Create Unit Test Project
-- ❌  Write unit tests for `CalculateCharge` method
-- ❌  Ensure all unit tests pass
+- ✅  Create Unit Test Project
+- ✅  Write unit tests for `CalculateCharge` method
+- ✅  Ensure all unit tests pass
 
 ## Overview
 This lab assignment focuses on creating an application that processes electricity bills for multiple customers. The application will store customer data, calculate electricity bills based on usage, and track various statistics related to the customers.
